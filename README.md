@@ -24,3 +24,5 @@ echo 'PATH=$PATH:/usr/local/bin/' >> ~/.bashrc
 cd <directory-containing-arw>
 rename-arw <pattern>
 ```
+## Example
+![image](https://github.com/signoredellarete/rename-arw/assets/37313214/5dedfa23-6b3d-4284-b641-41f7c584c339)
