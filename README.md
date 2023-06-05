@@ -14,7 +14,8 @@ Download [main.zip](https://github.com/signoredellarete/rename-arw/archive/refs/
 ```
 sudo mkdir -p /usr/local/bin/
 sudo chmod +x /usr/local/bin/
-cp rename-arw /usr/local/bin/
+sudo cp rename-arw /usr/local/bin/
+sudo chmod +x /usr/local/bin/rename-arw
 echo 'PATH=$PATH:/usr/local/bin/' >> ~/.bashrc
 ```
 
