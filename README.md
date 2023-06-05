@@ -32,7 +32,7 @@ sudo chmod +x /usr/local/bin/rename-arw
 
 
 ## Update
-If `rename-arw` is already installed in your system and you want to update it just download [main.zip](https://github.com/signoredellarete/rename-arw/archive/refs/heads/main.zip) and extract zip file, then:
+If `rename-arw` is already installed in your system and you want to update it, just download [main.zip](https://github.com/signoredellarete/rename-arw/archive/refs/heads/main.zip) and extract zip file, then:
 ```
 cd rename-arw-main/
 sudo cp rename-arw /usr/local/bin/
