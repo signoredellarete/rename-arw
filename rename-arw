@@ -22,7 +22,7 @@ fi
 if arw_num=`ls -1|grep ARW|wc -l`; then
   if [ ${arw_num} -lt 1 ];then
     echo "Error!"
-    echo "No .ARW file found in this folder: $PWD"
+    echo "No .ARW file found in this folder: ${PWD}"
     usage
     exit 1
   fi
