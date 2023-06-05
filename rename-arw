@@ -9,7 +9,7 @@ usage(){
   echo " "
 }
 
-# Check if pattern argument is given by user
+# Checks
 if [ -z "$1" ];then
   echo "Error!"
   echo "Argument <pattern> is missing."
@@ -19,7 +19,6 @@ else
   pattern=${1}
 fi
 
-# Check
 if arw_num=`ls -1|grep ARW|wc -l`; then
   if [ ${arw_num} -lt 1 ];then
     echo "Error!"
