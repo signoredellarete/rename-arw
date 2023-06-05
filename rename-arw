@@ -1,6 +1,6 @@
 #!/bin/bash
-# Check pattern argument
 
+# Functions
 usage(){
   echo " "
   echo "Usage:"
@@ -9,6 +9,7 @@ usage(){
   echo " "
 }
 
+# Check if pattern argument is given by user
 if [ -z "$1" ];then
   echo "Error!"
   echo "Argument <pattern> is missing."
