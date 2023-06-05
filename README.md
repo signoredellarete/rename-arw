@@ -10,8 +10,9 @@
 > `YYYYMMDDHHmmss` is retrieved from the datetime metadata of the file.
 
 ## Installation
-Download [main.zip](https://github.com/signoredellarete/rename-arw/archive/refs/heads/main.zip) and extract zip file.
+Download [main.zip](https://github.com/signoredellarete/rename-arw/archive/refs/heads/main.zip) and extract zip file, then:
 ```
+cd rename-arw-main/
 sudo mkdir -p /usr/local/bin/
 sudo chmod +x /usr/local/bin/
 sudo cp rename-arw /usr/local/bin/
