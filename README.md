@@ -1,7 +1,7 @@
 # rename-arw
 
 ## Description
-**rename-arw** is a script, for MAC OS & Linux, that operates in the folder in which it is launched and renames all the RAW files with `.ARW` extension following this path:
+**rename-arw** is a script, for MAC OS & Linux, that operates in the folder in which it is launched and renames all the RAW files with `.ARW` extension following this format:
 
 `YYYYMMDDHHmmss-<pattern><filename>`
 
