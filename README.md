@@ -10,15 +10,26 @@
 > `YYYYMMDDHHmmss` is retrieved from the datetime metadata of the file.
 
 ## Installation
+> This script will work if the following commands are already in the system: `file`, `cut`, `tr`
+
 Download [main.zip](https://github.com/signoredellarete/rename-arw/archive/refs/heads/main.zip) and extract zip file, then:
 ```
 cd rename-arw-main/
+```
+- For Mac OS users:
+```
 sudo mkdir -p /usr/local/bin/
 sudo chmod +x /usr/local/bin/
 sudo cp rename-arw /usr/local/bin/
 sudo chmod +x /usr/local/bin/rename-arw
 echo 'PATH=$PATH:/usr/local/bin/' >> ~/.bashrc
 ```
+- For Linux users:
+```
+sudo cp rename-arw /usr/local/bin/
+sudo chmod +x /usr/local/bin/rename-arw
+```
+
 
 ## Update
 If `rename-arw` is already installed in your system and you want to update it just download [main.zip](https://github.com/signoredellarete/rename-arw/archive/refs/heads/main.zip) and extract zip file, then:
