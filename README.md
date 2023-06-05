@@ -6,6 +6,7 @@
 `YYYYMMDDHHmmss-<pattern><filename>`
 
 > `<pattern>` must be provided by user.
+
 > `YYYYMMDDHHmmss` is retrieved from the datetime metadata of the file.
 
 ## Installation
