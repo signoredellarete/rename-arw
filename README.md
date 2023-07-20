@@ -40,7 +40,7 @@ sudo chmod +x /usr/local/bin/rename-arw
 ```
 
 ## Usage
-Enter the directory containing ARW files and run the commmand `rename-arw` followed by <pattern>.
+Enter the directory containing ARW files and run the commmand `rename-arw` followed by `<pattern>`.
 ```
 cd <directory-containing-arw>
 rename-arw <pattern>
