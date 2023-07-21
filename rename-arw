@@ -1,37 +1,122 @@
 #!/bin/bash
 
+# Options
+mode=arw
+
+while getopts "j" opt; do
+  case ${opt} in
+    j )
+      mode=jpg
+      ;;
+    \? )
+      echo "Invalid option: -$OPTARG" 1>&2
+      exit 1
+      ;;
+  esac
+done
+
 # Functions
+## Usage
 usage(){
   echo " "
   echo "Usage:"
   echo "cd <directory-containing-arw>"
   echo "rename-arw <pattern>"
   echo " "
+  echo "Options:"
+  echo "-j          Renames .jpg replacing the last part of the name with a sequential number"
 }
 
-# Checks
-if [ -z "$1" ];then
-  echo "Error!"
-  echo "Argument <pattern> is missing."
-  usage
-  exit 1
-else
-  pattern=${1}
-fi
+splash(){
+  echo "+------------+
+| rename-arw |
++------------+"
+}
 
-if arw_num=`ls -1|grep ARW|wc -l`; then
-  if [ ${arw_num} -lt 1 ];then
+## Rename ARW
+rename_arw(){
+  echo " - ARW mode -"
+  echo " "
+  for i in `ls -1 *ARW`
+  do
+    datetime=`file -p ${i}|cut -d "," -f 13|cut -d "=" -f 2|tr ":" " "|tr -d " "`
+    echo ${i} "--->" ${datetime}-${pattern}${i}
+    mv ${i} ${datetime}-${pattern}${i}
+  done
+}
+
+## Rename JPG
+rename_jpg(){
+  echo " - JPG mode -"
+  echo " "
+  jpg_num=`ls -1|grep jpg|wc -l`
+  counter=1
+  for i in `ls -1 *jpg`
+  do
+    new_name=$(echo ${i}|cut -d '_' -f 1)"_"$(seq -w ${jpg_num}|head -n ${counter}|tail -1)".jpg"
+    echo ${i} "--->" ${new_name}
+    mv ${i} ${new_name}
+    counter=$((counter+1))
+  done
+}
+
+# Check functions
+
+## General
+check_pattern(){
+  if [ -z "$1" ];then
     echo "Error!"
-    echo "No .ARW file found in this folder: ${PWD}"
+    echo "Argument <pattern> is missing."
     usage
     exit 1
+  else
+    pattern=${1}
   fi
-fi
+}
+
+## ARW
+check_arw_num(){
+  if arw_num=`ls -1|grep ARW|wc -l`; then
+    if [ ${arw_num} -lt 1 ];then
+      echo "Error!"
+      echo "No .ARW file found in this folder: ${PWD}"
+      usage
+      exit 1
+    fi
+  fi
+}
+
+## JPG
+check_jpg_num(){
+  if jpg_num=`ls -1|grep jpg|wc -l`; then
+    if [ ${jpg_num} -lt 1 ];then
+      echo "Error!"
+      echo "No .jpg file found in this folder: ${PWD}"
+      usage
+      exit 1
+    fi
+  fi
+}
 
 # Execution
-for i in `ls -1 *ARW`
-do
-  datetime=`file -p ${i}|cut -d "," -f 13|cut -d "=" -f 2|tr ":" " "|tr -d " "`
-  echo ${i} "--->" ${datetime}-${pattern}${i}
-  mv ${i} ${datetime}-${pattern}${i}
-done
+splash
+case ${mode} in
+
+  "arw")
+    check_arw_num
+    check_pattern $1
+    rename_arw $pattern
+    ;;
+
+  "jpg")
+    check_jpg_num
+    rename_jpg
+    ;;
+
+  *)
+    check_arw_num
+    check_pattern
+    rename_arw
+    ;;
+
+esac
