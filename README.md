@@ -44,7 +44,7 @@ For example if the directory contains 100 files we will have the counter at the 
 ```
 
 ## Installation
-> This script will work if the following commands are already in the system: `file`, `cut`, `tr`
+> This script will work if the following commands are already in the system: `file`, `cut`, `tr`, `seq`, `tail`, `head`
 
 Download [main.zip](https://github.com/signoredellarete/rename-arw/archive/refs/heads/main.zip) and extract zip file, then:
 ```
