@@ -11,7 +11,7 @@
 
 **rename-arw** can also rename your jpg files assuming same name convention adopted for ARW files, the renamed files will have a sequential number in place of the original filename (EX. _DSC0270.ARW).
 
-So assuming we have the file `_DSC0270.ARW` within the `DCIM` directory, i.e., a photo taken on June 3, 2023 at 19:32:37, we first proceed to rename it with the pattern example:
+So assuming we have the file `_DSC0270.ARW` within the `DCIM` directory, i.e., a photo taken on June 3, 2023 at 19:32:37, we first proceed to rename it with the pattern `example`:
 ```
 cd DCIM
 rename-arw example
